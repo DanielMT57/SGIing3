@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Productos</title>
+    </h:head>
+    <h:body>
+        <br/> 
+     
+        <h:form>   
+            <p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
+            <p:panel header="Administracion de Productos">              
+                <h:panelGrid columns="4" cellpadding="3">
+                    <p:outputLabel>id</p:outputLabel>
+                    <p:inputText id="tfCodigo"  value="#{productoBean.id}" />
+
+                    <p:outputLabel>Nombre</p:outputLabel>
+                    <p:inputText id="tfNombre" value="#{productoBean.nombre}" />
+                    <p:outputLabel>Peso</p:outputLabel>
+                    <p:inputText id="tfPeso" value="#{productoBean.peso}" />
+                    <p:outputLabel>Dimensiones</p:outputLabel>
+                    <p:inputText id="tfPrecioCompra"  value="#{productoBean.dimensiones}" />
+                    <p:outputLabel>Cantidad</p:outputLabel>
+                    <p:inputText id="tfPrecioVenta"  value="#{productoBean.cantidad}" />               
+               
+                </h:panelGrid>  
+            </p:panel> 
+            <p:commandButton value ="Insertar" action ="#{productoBean.insertar()}" update="@form"/> 
+            <p:commandButton value ="Buscar" action ="#{productoBean.buscar()}" update="@form"/> 
+            <p:commandButton value ="Actualizar" action ="#{productoBean.editar()}" update="@form"/> 
+            <p:commandButton value ="Eliminar" action ="#{productoBean.eliminar()}" update="@form"/>
+
+
+        </h:form> 
+        <h:link outcome="welcomePrimefaces" value="Primefaces welcome page" />
+    </h:body>
+</html>
+
+

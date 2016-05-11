@@ -10,8 +10,9 @@ import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 
 /**
- *
- * @author Daniel
+ * Clase a la que le compete la lógica de negocio de la clase Objeto
+ * @author Daniel Moncada Tabares
+ * @author Mauricio Marin Martinez
  */
 @Stateless
 @LocalBean

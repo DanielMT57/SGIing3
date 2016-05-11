@@ -21,7 +21,6 @@ import javax.persistence.Table;
 public class Objeto implements Serializable {
 
     @Id
-    @Column(name = "ID_OBJETO")
     private int id;
     @Column
     private String nombre;

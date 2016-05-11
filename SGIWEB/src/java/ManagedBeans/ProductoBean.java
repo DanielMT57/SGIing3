@@ -14,12 +14,11 @@ import java.util.List;
 import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
-import javax.persistence.Column;
-import javax.persistence.Id;
 
 /**
- *
- * @author MAO
+ * Clase que sirve como controlador de la pagina index.xhtml, provee las funcionalidades alli vistas
+ * @author Mauricio Marin Martinez
+ * @author Daniel Moncada Tabares
  */
 @ManagedBean
 @ViewScoped
@@ -95,6 +94,9 @@ public class ProductoBean implements Serializable {
     public ProductoBean() {
     }
 
+    /**
+     * Metodo que ingresa un nuevo producto en la base de datos
+     */
     public void insertar() {
 
         try {
@@ -116,6 +118,9 @@ public class ProductoBean implements Serializable {
         }
     }
 
+    /**
+     * Metodo que busca un producto en la base de datos según su id
+     */
     public void buscar() {
 
         try {
@@ -133,10 +138,11 @@ public class ProductoBean implements Serializable {
         }
     }
 
+    /**
+     * Metodo que edita un objeto en la base de datos segun su id, y cambiando los parametros establecidos
+     */
     public void editar() {
-
         try {
-
             Objeto o = new Objeto();
             o.setId(id);
             o.setNombre(nombre);
@@ -155,8 +161,10 @@ public class ProductoBean implements Serializable {
 
     }
 
+    /**
+     * Metodo que elimina un objeto de la base de datos
+     */
     public void eliminar() {
-
         try {
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Informacion", "Ha  eliminado correctamente  "));
             System.out.println("ha eliminado correctamente");
@@ -168,6 +176,9 @@ public class ProductoBean implements Serializable {
         }
     }
 
+    /**
+     * Metodo que pone las celdas del formulario en blanco y los selection en la primera opcion si existe
+    */
     private void limpiar() {
         setCantidad(0);
         setId(0);
